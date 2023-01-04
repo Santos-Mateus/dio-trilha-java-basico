@@ -8,5 +8,6 @@ public class TiposVariaveis {
         String numero2 = "2";
         // A expressão "numero(int) + numero2(String)" concatena os valores das variáveis e não executam a operação matemática.  
         System.out.println(numero + numero2);
+
     }
 }
