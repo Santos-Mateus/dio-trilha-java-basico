@@ -1,18 +1,18 @@
-## Getting Started
+# Aula de Lógica Condicional
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+Conceituação e exercícios de operadores lógicos e relacionais.
 
-## Folder Structure
+## Exercícios práticos de como entender a lógica
 
-The workspace contains two folders by default, where:
+### Operadores relacionais
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+ 1. ==      IGUAL
+ 1. !=      DIFERENTE
+ 1. < e <=  MENOR E MENOR IGUAL
+ 1. > e >=  MAIOR E MAIOR IGUAL
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+### Operadores lógicos
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
-
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+ 1. && E(and)
+ 1. || OU(or)
+ 1. !  Negação(not)
