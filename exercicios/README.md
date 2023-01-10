@@ -12,7 +12,7 @@ Após a aula de visão geral dos laços de repetição e de arrays, nada mais ju
  1. Fatorial
 
 
-## Arrays {}
+## Arrays []
 
  1. Ordem inversa
  1. Consoantes
