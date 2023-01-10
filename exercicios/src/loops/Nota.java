@@ -13,6 +13,7 @@ public class Nota {
             System.out.println("Nota inválida, digite novamente!");
             nota = scan.nextInt();
         }
-
+        
+        scan.close();
     }
 }

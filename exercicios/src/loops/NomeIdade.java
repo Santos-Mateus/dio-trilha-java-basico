@@ -19,5 +19,6 @@ public class NomeIdade {
         
         System.out.println("Continua aqui.");   
         
+        scan.close();
     }
 }
