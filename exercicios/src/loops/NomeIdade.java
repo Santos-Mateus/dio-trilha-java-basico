@@ -13,11 +13,12 @@ public class NomeIdade {
             System.out.println("Nome: ");
             nome = scan.next();
             if(nome.equals("0")) break;
+            
             System.out.println("Idade: ");
             idade = scan.nextInt();
         }
         
-        System.out.println("Continua aqui.");   
+        System.out.println("Fim do programa.");   
         
         scan.close();
     }
