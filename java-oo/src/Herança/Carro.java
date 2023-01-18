@@ -1,3 +1,4 @@
+package Herança;
 
 public class Carro extends Veiculo {
     String cor;
