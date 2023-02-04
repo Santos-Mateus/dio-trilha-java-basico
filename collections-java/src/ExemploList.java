@@ -2,6 +2,7 @@ import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
+import java.util.LinkedList;
 import java.util.List;
 
 public class ExemploList {
@@ -49,6 +50,41 @@ public class ExemploList {
         }
 
         System.out.println("Exiba a soma dos valores da lista:  " + formatador.format(soma));
+        
+        System.out.println("Exiba a média das notas: " + formatador.format((soma/notas.size())));
+        
+        System.out.println("Remova a menor nota: ");
+        notas.remove(Collections.min(notas));
+        System.out.println(notas.toString());
+        
+        System.out.println("Remova a nota da posição 0");
+        notas.remove(0);
+        System.out.println(notas.toString());
+
+        System.out.println("Remova notas menores que 7: ");
+        Iterator<Double> iteratorMenorQue = notas.iterator();
+        while(iteratorMenorQue.hasNext())   {
+            Double next = iteratorMenorQue.next();
+            if(next < 7) iteratorMenorQue.remove();
+        }
+        System.out.println(notas.toString());
+
+        System.out.println("Confira se a lista está vazia: " + notas.isEmpty());
+
+        LinkedList<Double> notas2 = new LinkedList<Double>();
+        Iterator<Double> iteratorAdicao = notas.iterator();
+        while(iteratorAdicao.hasNext()) {
+            Double next = iteratorAdicao.next();
+            notas2.add(next);
+        }
+
+        System.out.print("Notas 2: " + notas2);
+
+        System.out.println("A primeira nota da lista2 é: " + notas2.get(0));
+
+        notas2.remove(0);
+        System.out.println("Remova o primeiro item da lista: " + notas2);
+        
 
 
 
