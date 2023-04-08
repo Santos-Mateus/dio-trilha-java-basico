@@ -1,111 +1,113 @@
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Comparator;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Objects;
+import java.util.LinkedHashMap;
+import java.util.TreeMap;
+import java.util.TreeSet;
+import java.util.Set;
+import java.util.Collections;
 
 public class ExemploOrdenacao {
-    /**
-     * @param args
-     */
-    public static void main(String[] args) {
-        
-        List<Gato> meusGatos = new ArrayList<>(){{
-            add(new Gato("Jon", 18, "preto"));
-            add(new Gato("Simba", 6, "tigrado"));
-            add(new Gato("Jon", 12, "amarelo"));
-        }};
-        /*Ordem de Inserção*/
-        System.out.println(meusGatos);
-        
-        /*Ordem Aleatória*/
-        Collections.shuffle(meusGatos);
-        System.out.println("Ordem aleatória\n" + meusGatos);
+	public static void main (String args[]){
+		
+		System.out.println("Meus Livros em Ordem Aleatória");
+		
+		Map<String, Livro> meusLivros = new HashMap<>(){{
+			put("Hawking, Stephen", new Livro("Uma Breve História do Tempo", 256));
+			put("Duhigg, Charles", new Livro("O Poder do Hábito", 408));
+			put("Harari, Yuval Noah", new Livro("21 Lições Para o Século", 432));
+		}};
+		
+		for (Map.Entry<String, Livro> livro : meusLivros.entrySet())
+			System.out.println(livro.getKey() + " - " + livro.getValue().getNome());
+			
+		System.out.println("\nMeus Livros em Ordem de Inserção");
+		
+		Map<String, Livro> meusLivros2 = new LinkedHashMap<>(){{
+			put("Hawking, Stephen", new Livro("Uma Breve História do Tempo", 256));
+			put("Duhigg, Charles", new Livro("O Poder do Hábito", 408));
+			put("Harari, Yuval Noah", new Livro("21 Lições Para o Século", 432));
+		}};
+		
+		for (Map.Entry<String, Livro> livro : meusLivros2.entrySet())
+			System.out.println(livro.getKey() + " - " + livro.getValue().getNome());
+			
+		System.out.println("\nMeus Livros em Ordem Alfabética de Autores");
+		
+		Map<String, Livro> meusLivros3 = new TreeMap<>(meusLivros2);
+		
+		for (Map.Entry<String, Livro> livro : meusLivros3.entrySet())
+			System.out.println(livro.getKey() + " - " + livro.getValue().getNome());
+			
+		System.out.println("\nMeus Livros em Ordem Alfabética de Nome dos Livros");
+		
+		Set<Map.Entry<String, Livro>> meusLivros4 = new TreeSet<>(new ComparatorNome());
+		meusLivros4.addAll(meusLivros.entrySet());
+        for (Map.Entry<String, Livro> livro : meusLivros4)
+			System.out.println(livro.getKey() + " - " + livro.getValue().getNome());
 
-        /*Ordem Natural*/
-        Collections.sort(meusGatos);
-        System.out.println("*-* Ordem natural *-*\n" + meusGatos);
-        
-        /*Ordem Idade*/
-        Collections.sort(meusGatos, new ComparatorIdade());
-        System.out.println("Ordem por idade\n " + meusGatos);
+		
+		
 
-        /*Ordem Cor*/
-        Collections.sort(meusGatos, new ComparatorCor());
-        System.out.println("Ordem por cor\n " + meusGatos);
-        
-        /*Ordem Nome/Cor/Idade*/
-        Collections.sort(meusGatos, new ComparatorNomeCorIdade());
-        System.out.println("Ordem por Nome, cor e/ou idade\n " + meusGatos);
+        System.out.println("\nMeus Livros em Ordem de Total de Páginas");
+        Set<Map.Entry<String, Livro>> meusLivros5 = new TreeSet<>(new ComparatorPaginas());
+		meusLivros5.addAll(meusLivros.entrySet());        
+        for (Map.Entry<String, Livro> livro : meusLivros5)
+			System.out.println(livro.getKey() + " - " + livro.getValue().getPaginas());
 
+	}
+}
+
+class Livro {
+	private String nome;
+	private Integer paginas;
+	
+	public Livro(String nome, Integer paginas){
+		this.nome = nome;
+		this.paginas  = paginas;
+	}
+	
+	public String getNome(){
+		return nome;
+	}
+	
+	public Integer getPaginas() {
+		return paginas;
+	}
+	
+	@Override
+	public boolean equals(Object o) {
+		if(this == o) return true;
+		if(o == null || getClass() != o.getClass()) return false;
+		Livro Livro = (Livro) o;
+		return nome.equals(Livro.nome) && paginas.equals(Livro.paginas);
+	}
+	
+	@Override
+	public int hashCode() {
+		return Objects.hash(nome, paginas);
+	}
+	
+	@Override
+	public String toString(){
+		return "Livro{" +
+				"nome'" + nome + '\'' +
+				", paginas=" + paginas +
+				'}';
+	}
+}
+
+class ComparatorNome implements Comparator<Map.Entry<String, Livro>> {
+    @Override
+    public int compare(Map.Entry<String, Livro> l1, Map.Entry<String, Livro> l2) {
+        return l1.getValue().getNome().compareToIgnoreCase(l2.getValue().getNome());    
     }
 }
 
-class Gato implements Comparable<Gato>{
-    private String nome;
-    private Integer idade;
-    private String cor;
-   
-    public Gato(String nome, Integer idade, String cor) {
-        this.nome = nome;
-        this.idade = idade;
-        this.cor = cor;
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public Integer getIdade() {
-        return idade;
-    }
-
-    public String getCor() {
-        return cor;
-    }
-
+class ComparatorPaginas implements Comparator<Map.Entry<String, Livro>> {
     @Override
-    public String toString() {
-        return "{nome=" + nome + ", idade=" + idade + ", cor=" + cor + "}";
+    public int compare(Map.Entry<String, Livro> p1, Map.Entry<String, Livro> p2) {
+        return p1.getValue().getPaginas().compareTo(p2.getValue().getPaginas());    
     }
-
-    @Override
-    public int compareTo(Gato gato) {
-        return this.getNome().compareToIgnoreCase(gato.getNome());
-    }
-
-
-}
-
-class ComparatorIdade implements Comparator<Gato> {
-    
-    @Override
-    public int compare(Gato g1, Gato g2) {
-        return Integer.compare(g1.getIdade(), g2.getIdade());
-    }
-
-}
-
-class ComparatorCor implements Comparator<Gato> {
-    
-    @Override
-    public int compare(Gato g1, Gato g2) {
-        return g1.getCor().compareToIgnoreCase(g2.getCor());
-    }
-
-}
-
-class ComparatorNomeCorIdade implements Comparator<Gato> {
-    
-    @Override
-    public int compare(Gato g1, Gato g2) {
-        int nome = g1.getNome().compareToIgnoreCase(g2.getNome());
-        if (nome != 0) return nome;
-
-        int cor = g1.getCor().compareToIgnoreCase(g2.getCor());
-        if (cor != 0) return cor;
-
-        return Integer.compare(g1.getIdade(), g2.getIdade());
-
-    }
-
 }
