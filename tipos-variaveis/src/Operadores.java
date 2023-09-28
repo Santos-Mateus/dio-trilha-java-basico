@@ -1,3 +1,4 @@
+/*
 public class Operadores {
     public static void main(String[] args) {
         // Conceitos Básicos de Operações Matemáticas
@@ -49,4 +50,12 @@ public class Operadores {
         }
     }
 }
-      
+*/
+
+public class Operadores {
+    public static void main(String[] args) {
+        double nota = 3.65;
+        String varia = nota >=6 ? "Aprovado" : nota >=4.5 && nota < 6 ? "Recuperação" : "Reprovado";
+        System.out.println(varia);
+    }
+}

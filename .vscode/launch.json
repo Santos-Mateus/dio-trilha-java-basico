@@ -1,0 +1,132 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Java",
+            "type": "java",
+            "request": "launch",
+            "stopOnEntry": true,
+            "jdkPath": "${env:JAVA_HOME}/bin",
+            "cwd": "${fileDirname}",
+            "startupClass": "${fileBasenameNoExtension}",
+            "classpath": [
+                ".",
+                "${fileDirname}"
+            ]
+        },
+        {
+            "name": "Java Console App",
+            "type": "java",
+            "request": "launch",
+            "stopOnEntry": true,
+            "jdkPath": "${env:JAVA_HOME}/bin",
+            "cwd": "${fileDirname}",
+            "startupClass": "${fileBasenameNoExtension}",
+            "classpath": [
+                ".",
+                "${fileDirname}"
+            ],
+            "externalConsole": true
+        },
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Operadores",
+            "request": "launch",
+            "mainClass": "Operadores",
+            "projectName": "dio-trilha-java-basico_9bfeb0cf"
+        },
+        {
+            "type": "java",
+            "name": "TiposVariaveis",
+            "request": "launch",
+            "mainClass": "TiposVariaveis",
+            "projectName": "dio-trilha-java-basico_9bfeb0cf"
+        },
+        {
+            "type": "java",
+            "name": "ArrayMultidimensional",
+            "request": "launch",
+            "mainClass": "arrays.ArrayMultidimensional",
+            "projectName": "dio-trilha-java-basico_9bfeb0cf"
+        },
+        {
+            "type": "java",
+            "name": "Consoantes",
+            "request": "launch",
+            "mainClass": "arrays.Consoantes",
+            "projectName": "dio-trilha-java-basico_9bfeb0cf"
+        },
+        {
+            "type": "java",
+            "name": "NumerosAleatorios",
+            "request": "launch",
+            "mainClass": "arrays.NumerosAleatorios",
+            "projectName": "dio-trilha-java-basico_9bfeb0cf"
+        },
+        {
+            "type": "java",
+            "name": "OrdemInversa",
+            "request": "launch",
+            "mainClass": "arrays.OrdemInversa",
+            "projectName": "dio-trilha-java-basico_9bfeb0cf"
+        },
+        {
+            "type": "java",
+            "name": "Fatorial",
+            "request": "launch",
+            "mainClass": "loops.Fatorial",
+            "projectName": "dio-trilha-java-basico_9bfeb0cf"
+        },
+        {
+            "type": "java",
+            "name": "MaiorMedia",
+            "request": "launch",
+            "mainClass": "loops.MaiorMedia",
+            "projectName": "dio-trilha-java-basico_9bfeb0cf"
+        },
+        {
+            "type": "java",
+            "name": "NomeIdade",
+            "request": "launch",
+            "mainClass": "loops.NomeIdade",
+            "projectName": "dio-trilha-java-basico_9bfeb0cf"
+        },
+        {
+            "type": "java",
+            "name": "Nota",
+            "request": "launch",
+            "mainClass": "loops.Nota",
+            "projectName": "dio-trilha-java-basico_9bfeb0cf"
+        },
+        {
+            "type": "java",
+            "name": "ParesImpares",
+            "request": "launch",
+            "mainClass": "loops.ParesImpares",
+            "projectName": "dio-trilha-java-basico_9bfeb0cf"
+        },
+        {
+            "type": "java",
+            "name": "Tabuada",
+            "request": "launch",
+            "mainClass": "loops.Tabuada",
+            "projectName": "dio-trilha-java-basico_9bfeb0cf"
+        },
+        {
+            "type": "java",
+            "name": "ControleCandidatos",
+            "request": "launch",
+            "mainClass": "sistemaValidacao.sistema.ControleCandidatos",
+            "projectName": "dio-trilha-java-basico_9bfeb0cf"
+        }
+    ]
+}
