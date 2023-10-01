@@ -5,6 +5,13 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "type": "java",
+            "name": "Contador",
+            "request": "launch",
+            "mainClass": "Contador",
+            "projectName": "dio-trilha-java-basico_9bfeb0cf"
+        },
+        {
             "name": "Java",
             "type": "java",
             "request": "launch",

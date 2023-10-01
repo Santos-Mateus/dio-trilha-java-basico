@@ -25,7 +25,7 @@ public class UncheckedException {
                 e.printStackTrace();
                 JOptionPane.showMessageDialog(null, "Impossível dividir número por 0. " + e.getMessage());
             } finally {
-                System.out.println("Chegou no finnaly!");
+                System.out.println("Chegou no finally!");
             }
         } while (continueLooping);
        
